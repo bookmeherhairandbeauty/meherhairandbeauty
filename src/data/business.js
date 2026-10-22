@@ -9,7 +9,7 @@ export const business = {
   WebburnerTech: "https://www.webburner.tech/",
   // Confirm opening hours and owner/story before replacing these placeholders.
   openingHours:
-    "Opening hours: 10 AM to 7 PM (Monday to Saturday). 12- 5 PM (Sunday). Please book with us before visiting.",
+    "Opening hours 10 AM to 7 PM (Monday to Saturday). 12- 5 PM (Sunday). Please book with us before visiting.",
   story: "Our salon story and owner introduction will be added here soon.",
 };
 export const mapsSearch = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(business.address)}`;
