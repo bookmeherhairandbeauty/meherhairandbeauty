@@ -170,7 +170,7 @@ export default function Layout() {
               <br />
               United Kingdom
             </p>
-            <p className="small">Opening hours to be confirmed.</p>
+            <p className="small">Opening hours 10.00 AM - 07.00 PM (Monday to Saturday), 12.00 - 5.00 PM (Sunday).</p>
           </div>
         </div>
         <div className="wrap footer-bottom">
