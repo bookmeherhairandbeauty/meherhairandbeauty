@@ -311,7 +311,7 @@ main:focus {
 .hero-art {
   position: relative;
   min-height: 482px;
-  background: linear-gradient(140deg, #fbe8ee, #f4c2d3);
+  background: transparent;
   border-radius: 180px 180px 14px 14px;
   isolation: isolate;
   display: flex;
