@@ -324,24 +324,24 @@ main:focus {
   z-index: -1;
   pointer-events: none;
 }
-/* .orbit-one {
+.orbit-one {
   inset: 18px;
   border-radius: 170px 170px 9px 9px;
-} */
-/* .orbit-two {
+}
+.orbit-two {
   width: 345px;
   height: 345px;
   border-radius: 50%;
   transform: rotate(-24deg) scaleX(1.17);
   opacity: 0.7; */
 } 
-/* .art-label {
+.art-label {
   position: absolute;
   top: 59px;
   font-size: 8px;
   letter-spacing: 2.5px;
   color: #98556c;
-} */
+}
 .logo-medallion {
   width: 64%;
   border-radius: none;
@@ -354,7 +354,7 @@ main:focus {
   border-radius: 50%;
   width: 100%;
 }
-/* .art-caption {
+.art-caption {
   position: absolute;
   bottom: 35px;
   left: 42px;
@@ -366,8 +366,8 @@ main:focus {
   font-size: 8px;
   letter-spacing: 2.3px;
   line-height: 1.8;
-} */
-/*.floating-note {
+} 
+.floating-note {
   position: absolute;
   left: -29px;
   bottom: 61px;
@@ -1649,4 +1649,26 @@ select:disabled {
   .contact-cards-two {
     grid-template-columns: repeat(2, 1fr);
   }
+}
+/* Keep only the main logo */
+.hero-art {
+  background: transparent;
+  border: none;
+  box-shadow: none;
+}
+
+/* Hide the orbits, surrounding text and small icons */
+.hero-art .art-orbit,
+.hero-art .art-label,
+.hero-art .art-caption,
+.hero-art .floating-note {
+  display: none;
+}
+
+/* Remove the glow and extra background around the logo */
+.hero-art .logo-medallion {
+  background: transparent;
+  box-shadow: none;
+  border: none;
+  padding: 0;
 }
