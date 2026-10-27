@@ -390,7 +390,7 @@ main:focus {
   color: var(--muted);
   letter-spacing: 1px;
   margin-top: 2px;
-} */
+}
 .service-ribbon {
   display: flex;
   justify-content: center;
