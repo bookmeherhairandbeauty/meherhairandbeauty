@@ -1650,14 +1650,12 @@ select:disabled {
     grid-template-columns: repeat(2, 1fr);
   }
 }
-/* Keep only the main logo */
 .hero-art {
   background: transparent;
   border: none;
   box-shadow: none;
 }
 
-/* Hide the orbits, surrounding text and small icons */
 .hero-art .art-orbit,
 .hero-art .art-label,
 .hero-art .art-caption,
@@ -1665,7 +1663,6 @@ select:disabled {
   display: none;
 }
 
-/* Remove the glow and extra background around the logo */
 .hero-art .logo-medallion {
   background: transparent;
   box-shadow: none;
