@@ -43,6 +43,7 @@ export const categories = [
       ["Chin", 5, true],
       ["Side", 6],
       ["Forehead", 4],
+      ["Halal Eyebrows", 20],
       ["Full Face", 20, false, "With eyebrow"],
     ],
   ),
