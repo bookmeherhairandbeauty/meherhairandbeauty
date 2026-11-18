@@ -156,12 +156,12 @@ export default function Home() {
           </div>
           <div className="category-links">
             {[
-              ["waxing", "Body Waxing"],
-              ["threading", "Eyebrow Threading & Tinting"],
-              ["lashes", "Eyelash Extensions & Lifts"],
-              ["makeup", "Makeup & Bridal Beauty"],
-            ].map(([id, label]) => (
-              <Link to={`/services?category=${id}`} key={id}>
+              ["/services?category=threading", "Eyebrow Threading & Tinting"],
+              ["/services?category=threading&q=Halal%20Eyebrows", "Halal Eyebrows"],
+              ["/services?category=lashes", "Eyelash Extensions & Lifts"],
+              ["/services?category=makeup", "Makeup & Bridal Beauty"],
+            ].map(([to, label]) => (
+              <Link to={to} key={label}>
                 {label}
                 <ArrowUpRight size={15} />
               </Link>
