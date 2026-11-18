@@ -159,7 +159,7 @@ export default function Home() {
               ["/services?category=threading", "Eyebrow Threading & Tinting"],
               ["/services?category=threading&q=Halal%20Eyebrows", "Halal Eyebrows"],
               ["/services?category=lashes", "Eyelash Extensions & Lifts"],
-              ["/services?category=waxing", "Body Wax"]
+              ["/services?category=waxing", "Body Wax"],
               ["/services?category=makeup", "Makeup & Bridal Beauty"],
             ].map(([to, label]) => (
               <Link to={to} key={label}>
