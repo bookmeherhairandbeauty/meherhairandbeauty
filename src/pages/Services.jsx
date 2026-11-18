@@ -2,6 +2,7 @@ import { useSearchParams, Link } from "react-router-dom";
 import { Search, ArrowUpRight } from "lucide-react";
 import { categories, formatPrice } from "../data/services";
 import { PageHeading, BookingCTA, icons } from "../components/Shared";
+import { categories, formatPrice } from "../data/services";
 export default function Services() {
   const [params, setParams] = useSearchParams();
   const category = params.get("category") || "all";
