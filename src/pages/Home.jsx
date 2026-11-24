@@ -23,7 +23,11 @@ const startingPrice = (id) =>
   `From £${categories.find((c) => c.id === id).services[0].price}`;
 const previews = [
   ["haircuts", "Haircuts & Styling", "A fresh perspective."],
-  ["colour", "Colour & Highlights", "Find your signature shade."],
+  [
+    "threading",
+    "Eyebrow Threading & Extensions",
+    "Define your brows. Complete your look.",
+  ],
   ["facials", "Facials & Skincare", "A little care for your skin."],
 ];
 export default function Home() {
