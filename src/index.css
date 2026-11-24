@@ -1688,3 +1688,33 @@ select:disabled {
     min-height: 160px;
   }
 }
+body {
+  background: #fff5f8;
+}
+
+main {
+  background:
+    radial-gradient(
+      ellipse at top left,
+      rgba(248, 187, 208, 0.35),
+      transparent 55%
+    ),
+    linear-gradient(
+      135deg,
+      #fff8fb 0%,
+      #fce4ec 50%,
+      #fff5f9 100%
+    );
+}
+
+.soft-section {
+  background: rgba(255, 245, 249, 0.65);
+}
+
+.page-heading {
+  background: transparent;
+}
+
+.booking-form {
+  background: #ffffff;
+}
