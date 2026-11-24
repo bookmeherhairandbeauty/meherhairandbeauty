@@ -22,13 +22,24 @@ import { categories } from "../data/services";
 const startingPrice = (id) =>
   `From £${categories.find((c) => c.id === id).services[0].price}`;
 const previews = [
-  ["haircuts", "Haircuts & Styling", "A fresh perspective."],
+  [
+    "haircuts",
+    "Haircuts & Styling",
+    "A fresh perspective.",
+    "haircuts.jpg",
+  ],
   [
     "threading",
     "Eyebrow Threading & Extensions",
     "Define your brows. Complete your look.",
+    "eyebrow-threading.jpg",
   ],
-  ["facials", "Facials & Skincare", "A little care for your skin."],
+  [
+    "facials",
+    "Facials & Skincare",
+    "A little care for your skin.",
+    "facials.jpg",
+  ],
 ];
 export default function Home() {
   return (
@@ -133,15 +144,35 @@ export default function Home() {
               All services & prices <ArrowUpRight size={17} />
             </Link>
           </div>
-          <div className="preview-grid">
-            {previews.map(([id, title, desc], i) => {
-              const Icon = icons[id];
-              return (
-                <Link
-                  key={id}
-                  to={`/services?category=${id}`}
-                  className={`service-preview preview-${i}`}
-                >
+    <div className="preview-grid">
+  {previews.map(([id, title, desc, photo], i) => (
+    <Link
+      key={id}
+      to={`/services?category=${id}`}
+      className={`service-preview preview-${i}`}
+    >
+      <div className="service-photo">
+        <img
+          src={imagePath(photo)}
+          alt={title}
+          loading="lazy"
+          width="600"
+          height="400"
+        />
+      </div>
+
+      <div className="preview-copy">
+        <span className="price-chip">{startingPrice(id)}</span>
+        <h3>{title}</h3>
+        <p>{desc}</p>
+
+        <span className="round-arrow">
+          <ArrowUpRight size={20} />
+        </span>
+      </div>
+    </Link>
+  ))}
+</div>
                   <div className="service-illustration">
                     <Icon size={82} strokeWidth={0.8} />
                     <span className="preview-number">0{i + 1}</span>
