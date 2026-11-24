@@ -22,12 +22,7 @@ import { categories } from "../data/services";
 const startingPrice = (id) =>
   `From £${categories.find((c) => c.id === id).services[0].price}`;
 const previews = [
-  [
-    "haircuts",
-    "Haircuts & Styling",
-    "A fresh perspective.",
-    "haircuts.jpg",
-  ],
+  ["haircuts", "Haircuts & Styling", "A fresh perspective.", "haircuts.jpg"],
   [
     "threading",
     "Eyebrow Threading & Extensions",
@@ -145,55 +140,39 @@ export default function Home() {
             </Link>
           </div>
           <div className="preview-grid">
-  {previews.map(([id, title, desc, photo], i) => (
-    <Link
-      key={id}
-      to={`/services?category=${id}`}
-      className={`service-preview preview-${i}`}
-    >
-      <div className="service-photo">
-        <img
-          src={imagePath(photo)}
-          alt={title}
-          loading="lazy"
-          width="600"
-          height="400"
-        />
-      </div>
-
-      <div className="preview-copy">
-        <span className="price-chip">{startingPrice(id)}</span>
-        <h3>{title}</h3>
-        <p>{desc}</p>
-
-        <span className="round-arrow">
-          <ArrowUpRight size={20} />
-        </span>
-      </div>
-    </Link>
-  ))}
-</div>
-    
-                  <div className="service-illustration">
-                    <Icon size={82} strokeWidth={0.8} />
-                    <span className="preview-number">0{i + 1}</span>
-                  </div>
-                  <div className="preview-copy">
-                    <span className="price-chip">{startingPrice(id)}</span>
-                    <h3>{title}</h3>
-                    <p>{desc}</p>
-                    <span className="round-arrow">
-                      <ArrowUpRight size={20} />
-                    </span>
-                  </div>
-                </Link>
-              );
-            })}
+            {previews.map(([id, title, desc, photo], i) => (
+              <Link
+                key={id}
+                to={`/services?category=${id}`}
+                className={`service-preview preview-${i}`}
+              >
+                <div className="service-photo">
+                  <img
+                    src={imagePath(photo)}
+                    alt={title}
+                    loading="lazy"
+                    width="600"
+                    height="400"
+                  />
+                </div>
+                <div className="preview-copy">
+                  <span className="price-chip">{startingPrice(id)}</span>
+                  <h3>{title}</h3>
+                  <p>{desc}</p>
+                  <span className="round-arrow">
+                    <ArrowUpRight size={20} />
+                  </span>
+                </div>
+              </Link>
+            ))}
           </div>
           <div className="category-links">
             {[
               ["/services?category=threading", "Eyebrow Threading & Tinting"],
-              ["/services?category=threading&q=Halal%20Eyebrows", "Halal Eyebrows"],
+              [
+                "/services?category=threading&q=Halal%20Eyebrows",
+                "Halal Eyebrows",
+              ],
               ["/services?category=lashes", "Eyelash Extensions & Lifts"],
               ["/services?category=waxing", "Body Wax"],
               ["/services?category=makeup", "Makeup & Bridal Beauty"],
