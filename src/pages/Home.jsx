@@ -144,7 +144,7 @@ export default function Home() {
               All services & prices <ArrowUpRight size={17} />
             </Link>
           </div>
-    <div className="preview-grid">
+          <div className="preview-grid">
   {previews.map(([id, title, desc, photo], i) => (
     <Link
       key={id}
@@ -173,6 +173,7 @@ export default function Home() {
     </Link>
   ))}
 </div>
+    
                   <div className="service-illustration">
                     <Icon size={82} strokeWidth={0.8} />
                     <span className="preview-number">0{i + 1}</span>
