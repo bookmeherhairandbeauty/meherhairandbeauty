@@ -17,7 +17,7 @@ import {
   Location,
   icons,
 } from "../components/Shared";
-import { imagePath } from "../data/business";
+import { business, imagePath } from "../data/business";
 import { categories } from "../data/services";
 const startingPrice = (id) =>
   `From £${categories.find((c) => c.id === id).services[0].price}`;
@@ -67,7 +67,7 @@ export default function Home() {
             Hair & Beauty in Canning Town, London.
           </p>
           <div className="button-row">
-            <Button to="/book">Book Appointment</Button>
+            <Button href={business.fresha}>Book Appointment</Button>
             <Link to="/services" className="text-link">
               Explore Services <ArrowRight size={18} />
             </Link>
