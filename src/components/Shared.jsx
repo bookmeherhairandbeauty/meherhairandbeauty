@@ -19,6 +19,7 @@ import {
   mapsDirections,
   mapsEmbed,
 } from "../data/business";
+
 export const icons = {
   haircuts: Scissors,
   colour: Palette,
@@ -30,6 +31,7 @@ export const icons = {
   facials: Droplets,
   makeup: Heart,
 };
+
 export function Button({
   to,
   href,
@@ -38,7 +40,10 @@ export function Button({
   className = "",
   ...props
 }) {
-  const style = `button ${secondary ? "button-secondary" : "button-primary"} ${className}`;
+  const style = `button ${
+    secondary ? "button-secondary" : "button-primary"
+  } ${className}`;
+
   return to ? (
     <Link to={to} className={style} {...props}>
       {children}
@@ -51,6 +56,7 @@ export function Button({
     </a>
   );
 }
+
 export function Eyebrow({ children }) {
   return (
     <p className="eyebrow">
@@ -59,6 +65,7 @@ export function Eyebrow({ children }) {
     </p>
   );
 }
+
 export function PageHeading({ eyebrow, title, children }) {
   return (
     <div className="page-heading wrap">
@@ -68,6 +75,7 @@ export function PageHeading({ eyebrow, title, children }) {
     </div>
   );
 }
+
 export function BookingCTA() {
   return (
     <section className="cta-section wrap">
@@ -78,12 +86,15 @@ export function BookingCTA() {
           <br />
           starts here.
         </h2>
-        <p>Choose your treatment. Call the salon. We’ll take it from there.</p>
+        <p>
+          Choose your treatment and book your appointment online with Fresha.
+        </p>
       </div>
-      <Button to="/book">Book Appointment</Button>
+      <Button href={business.fresha}>Book Appointment</Button>
     </section>
   );
 }
+
 export function Gallery() {
   return (
     <section className="section wrap gallery">
@@ -100,6 +111,7 @@ export function Gallery() {
           Browse the full price list <ArrowRight size={16} />
         </Link>
       </div>
+
       <a
         href={imagePath("1.png")}
         target="_blank"
@@ -117,6 +129,7 @@ export function Gallery() {
           Our treatment menu <ArrowUpRight size={16} />
         </span>
       </a>
+
       <a
         href={imagePath("2.png")}
         target="_blank"
@@ -137,6 +150,7 @@ export function Gallery() {
     </section>
   );
 }
+
 export function Location({ showMap = true }) {
   return (
     <section className="location-grid wrap section">
@@ -147,18 +161,22 @@ export function Location({ showMap = true }) {
           <br />
           <em>Canning Town.</em>
         </h2>
+
         <p className="icon-line">
           <MapPin size={20} />
           <span>{business.address}</span>
         </p>
+
         <a className="icon-line" href={business.phoneHref}>
           <Phone size={20} />
           {business.phone}
         </a>
+
         <p className="icon-line muted">
           <Clock size={20} />
           <span>{business.openingHours}</span>
         </p>
+
         <Button
           href={mapsDirections}
           secondary
@@ -168,6 +186,7 @@ export function Location({ showMap = true }) {
           Get Directions
         </Button>
       </div>
+
       {showMap && (
         <iframe
           className="map"
