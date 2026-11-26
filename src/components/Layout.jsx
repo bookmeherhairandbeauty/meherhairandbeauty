@@ -2,12 +2,14 @@ import { useEffect, useState } from "react";
 import { Link, NavLink, Outlet, useLocation } from "react-router-dom";
 import { Menu, X, ArrowUpRight, MapPin, Phone, Instagram } from "lucide-react";
 import { business, imagePath } from "../data/business";
+
 const links = [
   ["/", "Home"],
   ["/about", "About"],
   ["/services", "Services & Prices"],
   ["/contact", "Contact"],
 ];
+
 const metadata = {
   "/": [
     "Meher Hair & Beauty | Hair & Beauty Salon in Canning Town",
@@ -30,33 +32,42 @@ const metadata = {
     "Visit Meher Hair & Beauty at 44 Fife Road, Canning Town, London E16 1QB. Call 07903 129 511 or contact us by email.",
   ],
 };
+
 export default function Layout() {
   const [open, setOpen] = useState(false);
   const { pathname } = useLocation();
+
   useEffect(() => {
     setOpen(false);
     window.scrollTo(0, 0);
+
     const meta = metadata[pathname] || [
       "Page not found | Meher Hair & Beauty",
       "Page not found.",
     ];
+
     document.title = meta[0];
     document
       .querySelector('meta[name="description"]')
       ?.setAttribute("content", meta[1]);
+
     document.getElementById("main")?.focus({ preventScroll: true });
   }, [pathname]);
+
   useEffect(() => {
     if (!open) return;
+
     const close = (e) => {
       if (e.key === "Escape") {
         setOpen(false);
         document.getElementById("menu-toggle")?.focus();
       }
     };
+
     window.addEventListener("keydown", close);
     return () => window.removeEventListener("keydown", close);
   }, [open]);
+
   return (
     <>
       <a
@@ -69,6 +80,7 @@ export default function Layout() {
       >
         Skip to content
       </a>
+
       <div className="topbar">
         <span>
           <MapPin size={12} />
@@ -79,6 +91,7 @@ export default function Layout() {
           {business.phone}
         </a>
       </div>
+
       <header className="header">
         <div className="wrap nav-shell">
           <Link to="/" aria-label="Meher Hair & Beauty home" className="brand">
@@ -92,6 +105,7 @@ export default function Layout() {
               MEHER<small>HAIR & BEAUTY</small>
             </span>
           </Link>
+
           <button
             id="menu-toggle"
             className="menu-toggle"
@@ -102,6 +116,7 @@ export default function Layout() {
           >
             {open ? <X /> : <Menu />}
           </button>
+
           <nav
             id="navigation"
             className={open ? "navigation is-open" : "navigation"}
@@ -112,15 +127,22 @@ export default function Layout() {
                 {label}
               </NavLink>
             ))}
-            <NavLink to="/book" className="nav-book">
+
+            <a
+              href={business.fresha}
+              className="nav-book"
+              onClick={() => setOpen(false)}
+            >
               Book Appointment <ArrowUpRight size={16} />
-            </NavLink>
+            </a>
           </nav>
         </div>
       </header>
+
       <main id="main" tabIndex="-1">
         <Outlet />
       </main>
+
       <footer>
         <div className="wrap footer-grid">
           <div>
@@ -141,6 +163,7 @@ export default function Layout() {
               In the heart of Canning Town.
             </p>
           </div>
+
           <div>
             <h3>Explore</h3>
             {links.map(([path, label]) => (
@@ -148,8 +171,9 @@ export default function Layout() {
                 {label}
               </Link>
             ))}
-            <Link to="/book">Book Appointment</Link>
+            <a href={business.fresha}>Book Appointment</a>
           </div>
+
           <div>
             <h3>Let’s connect</h3>
             <a href={business.phoneHref}>{business.phone}</a>
@@ -161,6 +185,7 @@ export default function Layout() {
               TikTok <ArrowUpRight size={12} />
             </a>
           </div>
+
           <div>
             <h3>Visit us</h3>
             <p>
@@ -170,9 +195,13 @@ export default function Layout() {
               <br />
               United Kingdom
             </p>
-            <p className="small">Opening hours 10.00 AM - 07.00 PM (Monday to Saturday), 12.00 - 5.00 PM (Sunday).</p>
+            <p className="small">
+              Opening hours 10.00 AM - 07.00 PM (Monday to Saturday),
+              12.00 - 5.00 PM (Sunday).
+            </p>
           </div>
         </div>
+
         <div className="wrap footer-bottom">
           <span>© {new Date().getFullYear()} Meher Hair & Beauty</span>
           <a href={business.WebburnerTech} target="_blank" rel="noreferrer">
@@ -180,10 +209,11 @@ export default function Layout() {
           </a>
         </div>
       </footer>
+
       {pathname !== "/book" && (
-        <Link to="/book" className="mobile-book">
+        <a href={business.fresha} className="mobile-book">
           Book Appointment <ArrowUpRight size={18} />
-        </Link>
+        </a>
       )}
     </>
   );
