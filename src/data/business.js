@@ -5,6 +5,7 @@ export const business = {
   phoneHref: "tel:+447903129511",
   email: "book.meherhairandbeauty@gmail.com",
   instagram: "https://www.instagram.com/_meherhairandbeauty/",
+  fresha: "https://www.fresha.com/a/meher-hair-and-beauty-london-44-fife-road-tfiq57jt?pId=3119176",
   tiktok: "https://www.tiktok.com/@meherhairandbeauty",
   WebburnerTech: "https://www.webburner.tech/",
   // Confirm opening hours and owner/story before replacing these placeholders.
