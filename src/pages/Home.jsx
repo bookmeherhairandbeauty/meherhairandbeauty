@@ -22,12 +22,7 @@ import { categories } from "../data/services";
 const startingPrice = (id) =>
   `From £${categories.find((c) => c.id === id).services[0].price}`;
 const previews = [
-  [
-    "haircuts",
-    "Haircuts & Styling",
-    "A fresh perspective.",
-    "haircuts.jpg",
-  ],
+  ["haircuts", "Haircuts & Styling", "A fresh perspective.", "haircuts.jpg"],
   [
     "threading",
     "Eyebrow Threading & Extensions",
@@ -40,12 +35,7 @@ const previews = [
     "A little care for your skin.",
     "facials.jpg",
   ],
-  [
-    "waxing",
-    "Waxing",
-    "Smooth skin. A fresh feeling.",
-    "waxing.jpg",
-  ],
+  ["waxing", "Waxing", "Smooth skin. A fresh feeling.", "waxing.jpg"],
   [
     "lashes",
     "Eyelashes",
@@ -60,7 +50,7 @@ const previews = [
     "£20",
     "/services?category=threading&q=Halal%20Eyebrows",
   ],
-]; 
+];
 export default function Home() {
   return (
     <>
@@ -165,10 +155,10 @@ export default function Home() {
             </Link>
           </div>
           <div className="preview-grid">
-            {previews.map(([id, title, desc, photo], i) => (
+            {previews.map(([id, title, desc, photo, price, destination], i) => (
               <Link
                 key={id}
-                to={`/services?category=${id}`}
+                to={destination || `/services?category=${id}`}
                 className={`service-preview preview-${i}`}
               >
                 <div className="service-photo">
@@ -180,21 +170,10 @@ export default function Home() {
                     height="400"
                   />
                 </div>
-      <div className="preview-copy">
-        <span className="price-chip">
-          {price || startingPrice(id)}
-        </span>
-        <h3>{title}</h3>
-        <p>{desc}</p>
-        <span className="round-arrow">
-          <ArrowUpRight size={20} />
-        </span>
-      </div>
-    </Link>
-  ))}
-</div>
                 <div className="preview-copy">
-                  <span className="price-chip">{startingPrice(id)}</span>
+                  <span className="price-chip">
+                    {price || startingPrice(id)}
+                  </span>
                   <h3>{title}</h3>
                   <p>{desc}</p>
                   <span className="round-arrow">
