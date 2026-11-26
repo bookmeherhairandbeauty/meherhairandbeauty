@@ -60,7 +60,7 @@ const previews = [
     "£20",
     "/services?category=threading&q=Halal%20Eyebrows",
   ],
-];
+]; 
 export default function Home() {
   return (
     <>
